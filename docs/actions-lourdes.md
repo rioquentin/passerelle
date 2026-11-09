@@ -1,6 +1,6 @@
 # Actions reportées (coûteuses ou à valider)
 
-- [ ] **Mise en ligne.** Choisir l'hébergement : GitHub Pages (le repo doit être public sur un compte gratuit), Cloudflare Pages ou Netlify (il faut un compte). Le site est statique : `npm run build` produit `dist/`.
+- [x] **Mise en ligne** : GitHub Pages, https://rioquentin.github.io/passerelle/ (dépôt public rioquentin/passerelle, redéploiement automatique à chaque push sur main).
 - [ ] **Audio pré-généré multi-voix** avec Piper TTS (voix fr_FR siwis, upmc, tom). Il ne dépendra plus des voix installées sur le téléphone. Vérifier les licences (cf. docs/recherche.md §13).
 - [ ] **Enregistrements Common Voice (CC0)** pour les Klangpaare : de vraies voix variées.
 - [ ] **Agrandir le lexique à partir de Lexique 3.83** (fréquences films, environ 600 → 2 000 entrées) avec annotation de transparence. Ça demande un téléchargement et un gros travail d'annotation.
