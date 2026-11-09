@@ -1,4 +1,4 @@
-import { h, runRounds, choices, tappableText, closePop } from '../lib/ui.ts';
+import { h, runRounds, choices, tappableText, closePop, frTypo } from '../lib/ui.ts';
 import { say } from '../lib/speech.ts';
 import { segment, norm } from '../lib/lexicon.ts';
 import { answer, pick, shuffle, markPlayed } from '../lib/store.ts';
@@ -19,7 +19,7 @@ export function enthuellen() {
       let shown = 0;
       const p = h('p', { class: 'text', lang: 'fr' });
       for (const s of segment(it.fr)) {
-        if (!s.word) { p.append(s.t); continue; }
+        if (!s.word) { p.append(frTypo(s.t)); continue; }
         const span = h('span', { class: 'w veil' }, s.t);
         span.addEventListener('click', () => {
           if (!span.classList.contains('veil')) return;

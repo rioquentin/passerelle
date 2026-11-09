@@ -1,4 +1,4 @@
-import { h, runRounds, plaque, choices, entryBox, speakBtn, screen } from '../lib/ui.ts';
+import { h, runRounds, plaque, choices, entryBox, speakBtn, screen, frTypo } from '../lib/ui.ts';
 import { say } from '../lib/speech.ts';
 import { CORE, CHUNKS, type Entry } from '../lib/lexicon.ts';
 import { answer, pick, shuffle, markPlayed } from '../lib/store.ts';
@@ -226,7 +226,7 @@ export function signale(arg?: string) {
       }
       stage.append(
         h('p', { class: 'note' }, ask),
-        h('p', { class: 'text', lang: 'fr' }, s.fr),
+        h('p', { class: 'text', lang: 'fr' }, frTypo(s.fr)),
         speakBtn(s.fr));
       say(s.fr);
       choices(stage, opts, idx, (ok) => {

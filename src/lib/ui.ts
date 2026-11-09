@@ -17,6 +17,11 @@ export function h<K extends keyof HTMLElementTagNameMap>(
   return el;
 }
 
+/** Typographie française : espace fine insécable avant ; : ! ? et à l'intérieur des guillemets. */
+export function frTypo(t: string): string {
+  return t.replace(/«[  ]*/g, '« ').replace(/[  ]*([»!?;:])/g, ' $1');
+}
+
 export const app = () => document.getElementById('app')!;
 
 export function screen(title: string, ...kids: Child[]) {
@@ -41,7 +46,7 @@ export function plaque(big: string, small?: string, sub?: string) {
   return h('div', { class: 'plaque' },
     h('div', { class: 'plaque-in' },
       small ? h('div', { class: 'small' }, small) : null,
-      h('div', { class: 'big', lang: 'fr' }, big),
+      h('div', { class: 'big', lang: 'fr' }, frTypo(big)),
       sub ? h('div', { class: 'sub' }, sub) : null,
     ));
 }
@@ -94,7 +99,7 @@ export function tappableText(
 ) {
   const p = h('p', { class: 'text', lang: 'fr' });
   for (const s of segment(text)) {
-    if (!s.word) { p.append(s.t); continue; }
+    if (!s.word) { p.append(frTypo(s.t)); continue; }
     const r = resolve(s.t, gloss);
     const span = h('span', { class: 'w ' + (classify?.(s.t, r) ?? '') }, s.t);
     span.addEventListener('click', () => {
@@ -139,7 +144,9 @@ export function runRounds<T>(r: Round<T>) {
     setProgress('');
     stage.replaceChildren(
       h('div', { class: 'result' },
-        h('div', { class: 'big' }, `${right} von ${r.items.length}`),
+        h('div', { class: 'big' }, `${right} von ${r.items.length}`,
+          right === r.items.length ? h('span', { class: 'annot', lang: 'fr' }, 'Très bien !')
+          : right >= r.items.length * 0.7 ? h('span', { class: 'annot', lang: 'fr' }, 'Bien !') : null),
         h('p', { class: 'prompt' }, right === r.items.length ? 'Alles richtig. Sehr gut!' : right >= r.items.length * 0.7 ? 'Gut gemacht.' : 'Das kommt wieder – die Wörter tauchen bald nochmal auf.'),
         wrong.length ? h('div', {}, h('p', { class: 'note' }, 'Zum Wiedersehen:'), h('ul', {}, ...wrong.map((w) => h('li', {}, w)))) : null,
       ),

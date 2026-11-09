@@ -4,6 +4,9 @@ import { segment } from '../lib/lexicon.ts';
 import { answer, isKnown, storyRead, storyState, getSpeed, setSpeed } from '../lib/store.ts';
 import { STORIES, DETEKTIV, type Story } from '../data/stories.ts';
 
+/** Heftseite: Seyès-Lineatur (Clairefontaine) unter dem Lesetext. */
+const cahier = <T extends HTMLElement>(el: T): T => { el.classList.add('cahier'); return el; };
+
 // ---------- Abdeckung berechnen ----------
 export type WClass = 'known' | 'cog' | 'unk' | 'name';
 export function classOf(r: Resolved | undefined): WClass {
@@ -49,11 +52,11 @@ export function detektiv() {
   const picked = new Set<HTMLElement>();
   const stage = h('div', { class: 'stage' });
   screen('Wörter-Detektiv', stage);
-  const text = tappableText(s.text, s.gloss, (_w, span) => {
+  const text = cahier(tappableText(s.text, s.gloss, (_w, span) => {
     if (picked.has(span)) { picked.delete(span); span.classList.remove('picked'); }
     else { picked.add(span); span.classList.add('picked'); }
     count.textContent = `${picked.size} markiert`;
-  });
+  }));
   const count = h('span', { class: 'progress' }, '0 markiert');
   const solve = h('button', { class: 'btn', onclick: reveal }, 'Auflösen');
   stage.append(
@@ -130,11 +133,11 @@ export function geschichte(id: string) {
       h('button', { class: 'btn speak', onclick: () => sayAll(sentences(s.text)) }, '▶ Vorlesen'),
       h('button', { class: 'btn ghost', onclick: () => { stop(); closePop(); } }, 'Stopp')),
     h('div', { class: 'slider' }, h('span', { class: 'note' }, 'Tempo'), speed, speedLabel),
-    tappableText(s.text, s.gloss, (w, span, r) => {
+    cahier(tappableText(s.text, s.gloss, (w, span, r) => {
       span.classList.add('flash');
       showPop(w, r?.de ?? 'Nicht im Wörterbuch');
       say(w, { rate: 0.8 });
-    }),
+    })),
   );
   gist(stage, s);
   const nextS = STORIES[idx + 1];

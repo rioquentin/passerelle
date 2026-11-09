@@ -10,6 +10,10 @@ Interface en allemand, contenu en français. Base scientifique : `docs/recherche
 3. **Le Textmarker jaune** des cahiers d'école allemands : les mots transparents sont *surlignés*, comme on le ferait à la main.
 4. **Entrée de dictionnaire de poche** (Langenscheidt, Petit Robert) : mot en gras, prononciation, traduction. C'est la forme du feedback.
 5. **Carnet Clairefontaine Seyès** : fond papier légèrement chaud.
+6. **Cahier Clairefontaine, réglure Seyès** : le texte des histoires et du Detektiv est posé sur une page de cahier (lignes violettes, marge rouge).
+7. **Plaques de numéro de maison parisiennes** : émail bleu, chiffre blanc, filet blanc. Elles servent pour la numérotation des jeux.
+8. **Le stylo rouge de la maîtresse** : « Très bien ! » ou « Bien ! » en écriture manuscrite (Caveat), seulement pour un bon résultat, jamais pour sanctionner.
+9. **Typographie française** : espace fine insécable avant ; : ! ? et à l'intérieur des guillemets (fonction frTypo), ce qui évite qu'un « reste seul en fin de ligne.
 
 ## Système
 
