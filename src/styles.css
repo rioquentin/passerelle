@@ -4,13 +4,13 @@
   --ink: #1c1f26;
   --ink-soft: #5b5f69;
   --line: #d9d3c2;
-  --plaque: #1e3765;
-  --plaque-frame: #2f6b50;
+  --plaque: #a9503a; /* brique de Toulouse */
+  --plaque-frame: #e0b048; /* or de la croix occitane */
   --marker: rgba(255, 228, 92, 0.6);
   --ok: #2f6b50;
   --ok-bg: #e3efe6;
-  --no: #b4462f;
-  --no-bg: #f6e2db;
+  --no: #85507a; /* violette de Toulouse : « à revoir », pas une sanction */
+  --no-bg: #f2e6ef;
   --serif: 'Literata', Georgia, serif;
   --sans: 'Source Sans 3', system-ui, sans-serif;
   color-scheme: light;
@@ -43,7 +43,7 @@ a { color: inherit; }
   color: #fff;
   border-radius: 10px;
   padding: 6px;
-  box-shadow: 0 1px 0 rgba(0,0,0,.25), 0 6px 18px -8px rgba(30,55,101,.55);
+  box-shadow: 0 1px 0 rgba(0,0,0,.25), 0 6px 18px -8px rgba(169,80,58,.5);
 }
 .plaque-in {
   border: 2px solid var(--plaque-frame);
@@ -159,7 +159,7 @@ a { color: inherit; }
 .result li { margin: 4px 0; }
 
 .meter { height: 10px; background: var(--paper-2); border-radius: 6px; overflow: hidden; }
-.meter i { display: block; height: 100%; background: var(--plaque-frame); border-radius: 6px; }
+.meter i { display: block; height: 100%; background: var(--plaque); border-radius: 6px; }
 
 textarea.paste {
   width: 100%; min-height: 160px; padding: 12px; border-radius: 10px; border: 1.5px solid var(--line);
@@ -187,7 +187,7 @@ textarea.paste {
 .hunt-btn {
   width: 100%; min-height: 120px; border-radius: 14px; border: 0; cursor: pointer;
   background: var(--plaque); color: #fff; font: 600 clamp(30px, 9vw, 42px)/1.1 var(--serif);
-  box-shadow: 0 6px 18px -8px rgba(30,55,101,.55); touch-action: manipulation;
+  box-shadow: 0 6px 18px -8px rgba(169,80,58,.5); touch-action: manipulation;
 }
 .hunt-btn[disabled] { opacity: .5; }
 .hunt-btn.pulse { animation: pulse .18s ease-out; }
@@ -195,27 +195,20 @@ textarea.paste {
 .hunt-count { font: 700 22px var(--serif); color: var(--ink); }
 
 /* ---------- Touches françaises ---------- */
-/* Heftseite mit Seyès-Lineatur (Clairefontaine „grands carreaux“) und rotem Rand */
+/* Lesetext auf einem schlichten hellen Blatt – ohne Linien, damit es ruhig zu lesen bleibt */
 .text.cahier {
-  --lh: 35px;
-  background-color: #fffdf8;
-  background-image:
-    linear-gradient(to right, transparent 22px, rgba(206, 70, 64, .5) 22px, rgba(206, 70, 64, .5) 23.5px, transparent 23.5px),
-    linear-gradient(to bottom, rgba(84, 96, 178, .34) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(84, 96, 178, .13) 1px, transparent 1px);
-  background-size: 100% 100%, 100% var(--lh), 100% calc(var(--lh) / 4);
-  background-position: 0 0, 0 var(--base, 34px), 0 var(--base, 34px);
-  padding: 10px 12px 12px 34px;
-  border-radius: 3px;
-  box-shadow: 0 1px 0 var(--line), 0 8px 18px -14px rgba(0, 0, 0, .4);
+  background: #fffdf8;
+  padding: 12px 14px;
+  border-radius: 4px;
+  box-shadow: 0 1px 0 var(--line), 0 8px 18px -14px rgba(0, 0, 0, .35);
 }
 
-/* Spielnummern als Pariser Hausnummernschild */
+/* Spielnummern als kleines Ziegelschild mit goldenem Rand */
 .games .n {
   display: inline-grid; place-items: center; align-self: start; margin-top: 1px;
   min-width: 28px; height: 24px; padding: 0 4px; border-radius: 4px;
   background: var(--plaque); color: #fff; font: 600 14px/1 var(--serif);
-  box-shadow: inset 0 0 0 2px var(--plaque), inset 0 0 0 3px rgba(255, 255, 255, .85);
+  box-shadow: inset 0 0 0 2px var(--plaque), inset 0 0 0 3px var(--plaque-frame);
 }
 .games .feature .n { margin-top: 0; }
 
