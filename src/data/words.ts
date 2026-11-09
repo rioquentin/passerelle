@@ -133,19 +133,19 @@ vraiment|wirklich||
 seulement|nur||
 ensemble|zusammen||
 ## k Verben
-être|sein|suis,es,est,sommes,êtes,sont,été,était,étais,étaient,sera,serai,serons,seront,soit|
-avoir|haben|ai,as,a,avons,avez,ont,eu,avait,avais,avaient,aura,aurai,aurons,auront|
+être|sein|suis,es,est,sommes,êtes,sont,été,était,étais,étaient,sera,serai,serons,seront,soit,serait,serais|
+avoir|haben|ai,as,a,avons,avez,ont,eu,avait,avais,avaient,aura,aurai,aurons,auront,auras|
 aller|gehen / fahren|vais,vas,va,allons,allez,vont,allé,allée,allés,allait,ira,irai,iront|„je vais“ + Infinitiv = Zukunft
 faire|machen / tun|fais,fait,faisons,faites,font,faisait,fera,ferai|
 dire|sagen|dis,dit,disons,dites,disent,disait,dira|
-pouvoir|können|peux,peut,pouvons,pouvez,peuvent,pu,pouvait,pourra,pourrait,pourriez|
+pouvoir|können|peux,peut,pouvons,pouvez,peuvent,pu,pouvait,pourra,pourrait,pourriez,pourrais|
 vouloir|wollen|veux,veut,voulons,voulez,veulent,voulu,voulait,voudrais,voudrait|„je voudrais“ = ich hätte gern
 savoir|wissen|sais,sait,savons,savez,savent,su,savait,saura|
-voir|sehen|vois,voit,voyons,voyez,voient,vu,vue,voyait,verra|
-venir|kommen|viens,vient,venons,venez,viennent,venu,venue,venait,viendra|
+voir|sehen|vois,voit,voyons,voyez,voient,vu,vue,voyait,verra,verrons|
+venir|kommen|viens,vient,venons,venez,viennent,venu,venue,venait,viendra,viendrai|
 prendre|nehmen|prends,prend,prenons,prenez,prennent,pris,prise,prenait,prendra|
 devoir|müssen|dois,doit,devons,devez,doivent,dû,devait,devrait|
-falloir|nötig sein|faut,fallait,faudra|„il faut“ = man muss
+falloir|nötig sein|faut,fallait,faudra,faudrait|„il faut“ = man muss
 mettre|legen / stellen|mets,met,mettons,mettez,mettent,mis,mettait|
 parler|sprechen|parle,parles,parlons,parlez,parlent,parlé,parlait|
 donner|geben|donne,donnes,donnons,donnez,donnent,donné|
@@ -153,7 +153,7 @@ trouver|finden|trouve,trouves,trouvons,trouvez,trouvent,trouvé|
 croire|glauben|crois,croit,croyons,croyez,croient,cru|
 penser|denken|pense,penses,pensons,pensez,pensent,pensé|
 passer|vorbeigehen / verbringen|passe,passes,passons,passez,passent,passé,passée|
-aimer|mögen / lieben|aime,aimes,aimons,aimez,aiment,aimé,aimait|
+aimer|mögen / lieben|aime,aimes,aimons,aimez,aiment,aimé,aimait,aimerais,aimerait|
 manger|essen|mange,manges,mangeons,mangez,mangent,mangé|
 boire|trinken|bois,boit,buvons,buvez,boivent,bu|
 partir|abfahren / weggehen|pars,part,partons,partez,partent,parti,partie|
@@ -299,7 +299,7 @@ million|Million|millions|
 kilo|Kilo|kilos|
 mètre|Meter|mètres|
 banque|Bank||
-famille|Familie||
+famille|Familie|familles|
 cousin|Cousin|cousine|
 idée|Idee|idées|
 groupe|Gruppe||
@@ -419,4 +419,273 @@ orange|Orange|oranges|
 chef|Chef||
 menu|Menü||
 long|lang (long)|longue,longs|
+## k Zahlen
+deux|zwei||
+trois|drei||
+quatre|vier||
+cinq|fünf||
+six|sechs||
+sept|sieben||„sept“: das p ist stumm
+huit|acht||
+neuf|neun / neu||„neuf“ heißt auch „neu“
+dix|zehn||
+onze|elf||
+douze|zwölf||
+quinze|fünfzehn||
+vingt|zwanzig||
+trente|dreißig||
+cinquante|fünfzig||
+soixante|sechzig||
+cent|hundert|cents|„pour cent“ = Prozent
+mille|tausend||
+## k Tage & Zeit
+lundi|Montag||
+mardi|Dienstag||
+mercredi|Mittwoch||
+jeudi|Donnerstag||
+vendredi|Freitag||
+samedi|Samstag||
+dimanche|Sonntag||
+midi|Mittag||
+minuit|Mitternacht||
+lendemain|nächster Tag||
+début|Anfang||
+fin|Ende||
+après-midi|Nachmittag||
+retard|Verspätung||„en retard“ = zu spät
+## k Menschen
+père|Vater||
+mère|Mutter||
+frère|Bruder|frères|
+sœur|Schwester|sœurs|
+fils|Sohn||
+fille|Tochter / Mädchen|filles|
+garçon|Junge / Kellner|garçons|
+mari|Ehemann||
+copain|Freund (Kumpel)|copine,copains,copines|
+monsieur|Herr|messieurs|
+parents|Eltern||auch: Verwandte
+personne|niemand / Person|personnes|„ne … personne“ = niemand
+## k Essen & Trinken
+fromage|Käse||
+lait|Milch||
+viande|Fleisch||
+poisson|Fisch||
+poulet|Hähnchen||
+légume|Gemüse|légumes|
+œuf|Ei|œufs|
+pomme|Apfel|pommes|„pomme de terre“ = Kartoffel
+gâteau|Kuchen|gâteaux|
+boisson|Getränk|boissons|
+repas|Mahlzeit||
+déjeuner|Mittagessen||„petit déjeuner“ = Frühstück
+faim|Hunger||„j'ai faim“ = ich habe Hunger
+soif|Durst||
+## k Haus & Stadt
+porte|Tür|portes|auch: „trägt“ (von porter)
+chambre|Zimmer|chambres|
+cuisine|Küche / Kochen||
+lit|Bett||auch: „liest“ (von lire)
+clé|Schlüssel|clés|
+gare|Bahnhof||
+plage|Strand||
+magasin|Laden|magasins|nicht „Magazin“!
+boulangerie|Bäckerei||
+église|Kirche||
+place|Platz||
+pont|Brücke||
+sortie|Ausgang||
+bâtiment|Gebäude||
+## k Dinge
+sac|Tasche||
+valise|Koffer||
+vélo|Fahrrad|vélos|
+avion|Flugzeug||
+bateau|Schiff|bateaux|
+billet|Fahrkarte / Geldschein|billets|
+lunettes|Brille||
+vêtements|Kleidung|vêtement|
+chaussure|Schuh|chaussures|
+cadeau|Geschenk|cadeaux|
+## k Natur & Wetter
+soleil|Sonne||
+pluie|Regen||
+vent|Wind||
+ciel|Himmel||
+arbre|Baum|arbres|
+fleur|Blume|fleurs|
+neige|Schnee||
+pleuvoir|regnen|pleut,pleuvait,pleuvra|„il pleut“ = es regnet
+## k Körper
+bras|Arm||
+jambe|Bein|jambes|
+pied|Fuß|pieds|
+dos|Rücken||
+ventre|Bauch||
+peur|Angst||„avoir peur“ = Angst haben
+## k Mehr Verben
+entendre|hören|entends,entend,entendons,entendez,entendent,entendu|
+perdre|verlieren|perds,perd,perdons,perdez,perdent,perdu,perdue|
+vendre|verkaufen|vends,vend,vendons,vendez,vendent,vendu|
+rendre|zurückgeben|rends,rend,rendons,rendez,rendent,rendu|
+payer|bezahlen|paie,paies,payons,payez,paient,payé|
+essayer|versuchen / anprobieren|essaie,essaies,essayons,essayez,essaient,essayé|
+envoyer|schicken|envoie,envoies,envoyons,envoyez,envoient,envoyé|
+revenir|zurückkommen|reviens,revient,revenons,revenez,reviennent,revenu,revenue|
+tenir|halten|tiens,tient,tenons,tenez,tiennent,tenu|„tiens !“ = schau mal!
+recevoir|bekommen|reçois,reçoit,recevons,recevez,reçoivent,reçu|
+apprendre|lernen|apprends,apprend,apprenons,apprenez,apprennent,appris|
+apporter|mitbringen|apporte,apportes,apportons,apportez,apportent,apporté|
+raconter|erzählen|raconte,racontes,racontons,racontez,racontent,raconté|
+rire|lachen|ris,rit,rions,riez,rient,ri|
+sourire|lächeln|souris,sourit,souriant|
+nager|schwimmen|nage,nages,nageons,nagez,nagent,nagé|
+courir|rennen|cours,court,courons,courez,courent,couru|
+conduire|fahren (Auto)|conduis,conduit,conduisons,conduisez,conduisent|
+monter|hinaufgehen / einsteigen|monte,montes,montons,montez,montent,monté,montée|
+descendre|hinuntergehen / aussteigen|descends,descend,descendons,descendez,descendent,descendu,descendue|
+tourner|abbiegen / drehen|tourne,tournes,tournons,tournez,tournent,tourné|
+laver|waschen|lave,laves,lavons,lavez,lavent,lavé|
+cuisiner|kochen|cuisines,cuisinons,cuisinez,cuisinent,cuisiné|
+gagner|gewinnen / verdienen|gagne,gagnes,gagnons,gagnez,gagnent,gagné|
+choisir|wählen|choisis,choisit,choisissons,choisissez,choisissent,choisi|
+sembler|scheinen|semble,semblent,semblait|
+arrêter|aufhören / anhalten|arrête,arrêtes,arrêtons,arrêtez,arrêtent,arrêté|
+rencontrer|treffen|rencontre,rencontres,rencontrons,rencontrez,rencontrent,rencontré,rencontrés|
+quitter|verlassen|quitte,quittes,quittons,quittez,quittent,quitté|
+pleurer|weinen|pleure,pleures,pleurons,pleurez,pleurent,pleuré|
+garder|behalten / hüten|garde,gardes,gardons,gardez,gardent,gardé|
+fumer|rauchen|fume,fumes,fumons,fumez,fument,fumé|
+## k Mehr Eigenschaften
+gentil|nett|gentille,gentils,gentilles|
+triste|traurig|tristes|
+malade|krank|malades|
+prêt|fertig / bereit|prête,prêts,prêtes|
+propre|sauber / eigen|propres|
+sale|schmutzig|sales|
+plein|voll|pleine,pleins,pleines|
+vide|leer|vides|
+fort|stark / laut|forte,forts,fortes|
+lourd|schwer|lourde|
+léger|leicht|légère|
+joli|hübsch|jolie,jolis,jolies|
+gros|dick / groß|grosse|
+haut|hoch|haute|
+bas|niedrig / unten|basse|„en bas“ = unten
+noir|schwarz|noire,noirs|
+blanc|weiß|blanche,blancs|
+rouge|rot|rouges|
+vert|grün|verte|
+bleu|blau|bleue,bleus|
+jaune|gelb|jaunes|
+ancien|ehemalig / alt|ancienne,anciens|
+prochain|nächste|prochaine|
+meilleur|besser / beste|meilleure|
+mauvais|schlecht|mauvaise|
+drôle|lustig||
+grave|schlimm / ernst||„c'est pas grave“ = macht nichts
+sûr|sicher|sûre|„bien sûr“ = natürlich
+désolé|tut mir leid|désolée|
+## k Mehr kleine Wörter
+presque|fast||
+partout|überall||
+ailleurs|woanders||
+dehors|draußen||
+ensuite|danach||
+surtout|vor allem||
+environ|ungefähr||
+plutôt|eher||
+sinon|sonst||
+autour|rund um||
+aucun|kein einziger|aucune|
+celui|derjenige / der da|celle,ceux,celles|
+dont|von dem / dessen||
+lorsque|als / wenn||
+## k Mehr Wendungen
+tout de suite|sofort||
+quand même|trotzdem||
+bien sûr|natürlich||
+d'abord|zuerst|abord|
+à côté|daneben / nebenan||
+côté|Seite||„à côté“ = daneben
+en face|gegenüber||
+pas mal|nicht schlecht / ziemlich viel||
+à cause de|wegen||
+de rien|gern geschehen||
+à bientôt|bis bald||
+à demain|bis morgen||
+bonne nuit|gute Nacht||
+bonsoir|guten Abend||
+excusez-moi|entschuldigen Sie||
+petit déjeuner|Frühstück||
+pomme de terre|Kartoffel||
+## b Monate
+janvier|Januar||
+février|Februar||
+mars|März||
+avril|April||
+mai|Mai||
+juin|Juni||
+juillet|Juli||
+août|August||gesprochen „ut“
+septembre|September||
+octobre|Oktober||
+novembre|November||
+décembre|Dezember||
+## d Mehr vom Deutschen
+appartement|Wohnung (Appartement)|appartements|
+quartier|Viertel (Quartier)|quartiers|
+journal|Zeitung (Journal)|journaux|
+souvenir|Erinnerung / Souvenir|souvenirs|
+rendez-vous|Verabredung (Rendezvous)||
+boutique|Laden (Boutique)|boutiques|
+ingénieur|Ingenieur|ingénieurs|
+baguette|Baguette|baguettes|
+champagne|Champagner||
+métro|U-Bahn (Metro)||
+pull|Pulli|pulls|
+sauce|Soße||
+crème|Sahne / Creme||
+croissant|Croissant|croissants|
+dessert|Dessert / Nachtisch|desserts|
+bébé|Baby|bébés|
+## e Mehr vom Englischen
+couleur|Farbe (colour)|couleurs|
+prix|Preis (price)||
+danger|Gefahr (danger)||
+coûter|kosten (cost)|coûte,coûtent,coûtait|
+préférer|lieber mögen (prefer)|préfère,préfères,préférez,préféré|
+vacances|Ferien (vacation)||
+jardin|Garten (garden)|jardins|
+voix|Stimme (voice)||
+image|Bild (image)|images|
+liberté|Freiheit (liberty)||
+dîner|Abendessen (dinner)||
+magnifique|großartig (magnificent)||
+délicieux|lecker (delicious)|délicieuse|
+incroyable|unglaublich (incredible)||
+agréable|angenehm (agreeable)||
+évidemment|offensichtlich (evidently)||
+finalement|schließlich (finally)||
+probablement|wahrscheinlich (probably)||
+## b Mehr von beiden
+village|Dorf (village)|villages|
+page|Seite (Page)|pages|
+plan|Plan / Stadtplan|plans|
+courage|Mut (Courage)||
+rare|selten (rar)||
+riche|reich (rich)|riches|
+rapide|schnell (rapid)|rapides|
+énorme|riesig (enorm)|énormes|
+terrible|schrecklich (terrible)||
+horrible|furchtbar (horribel)||
+confortable|bequem (komfortabel)||
+normalement|normalerweise||
+absolument|absolut||
+simplement|einfach (simply)||
+accident|Unfall (accident)|accidents|
+aéroport|Flughafen (Airport)||
+concert|Konzert|concerts|
+téléphone|Telefon|téléphones|
+pharmacie|Apotheke (Pharmazie)||
 `;

@@ -5,6 +5,7 @@ import { CORE, CHUNKS, ENTRIES } from './lib/lexicon.ts';
 import { knownCount, daysThisMonth, lastPlayed, resetAll, storyState } from './lib/store.ts';
 import { kern, freund, maschine, klang, signale } from './games/quiz.ts';
 import { detektiv, geschichten, geschichte, textometer } from './games/texts.ts';
+import { enthuellen, jagd } from './games/extra.ts';
 import { STORIES } from './data/stories.ts';
 
 const GAMES = [
@@ -12,9 +13,11 @@ const GAMES = [
   { href: '#/geschichten', t: 'Geschichten', d: 'Lena in Toulouse: kurze Folgen zum Lesen und Hören, jedes Wort antippbar.', feature: true },
   { href: '#/kern', t: 'Kernwörter', d: 'Die kleinen Wörter, die man nicht erraten kann: je, pas, déjà, il y a …' },
   { href: '#/freund', t: 'Freund oder Verräter?', d: 'Hier = gestern. Friseur gibt es nicht. Wer lügt?' },
-  { href: '#/maschine', t: 'Wortmaschine', d: 'Universität → université. Dreizehn Regeln, tausende Wörter.' },
+  { href: '#/maschine', t: 'Wortmaschine', d: 'Universität → université. Vierzehn Regeln, tausende Wörter.' },
+  { href: '#/enthuellen', t: 'Wort für Wort', d: 'Ein verdeckter Satz. Errate den Sinn mit möglichst wenigen Wörtern.' },
   { href: '#/klang', t: 'Klangpaare', d: 'tu oder tout? vent, vont oder vin? Fürs Ohr.' },
-  { href: '#/signale', t: 'Wann? Ja oder nein?', d: 'Vergangen, jetzt oder später? Verneint oder nicht? Nur die Signale.' },
+  { href: '#/jagd', t: 'Hörjagd', d: 'Tippe jedes Mal, wenn „pas“, „on“ oder „rien“ fällt. Nur fürs Ohr.' },
+  { href: '#/signale', t: 'Signale', d: 'Vorbei oder später? Ja oder nein? Wer tut was? Zwölf kleine Signale.' },
   { href: '#/textometer', t: 'Textometer', d: 'Irgendeinen Text einfügen und sehen, wie viel du davon verstehst.' },
 ];
 
@@ -74,8 +77,9 @@ function info() {
 }
 
 const routes: Record<string, (arg?: string) => void> = {
-  '': home, kern, freund, maschine, klang, signale, detektiv, geschichten, textometer, info,
+  '': home, kern, freund, maschine, klang, enthuellen, jagd, detektiv, geschichten, textometer, info,
   geschichte: (id) => geschichte(id ?? ''),
+  signale: (a) => signale(a),
 };
 
 function route() {

@@ -174,3 +174,22 @@ textarea.paste {
 .slider input { flex: 1; accent-color: var(--plaque); }
 
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+
+/* Wort für Wort: verdeckte Wörter */
+.w.veil {
+  color: transparent; background: var(--paper-2); border-radius: 3px;
+  box-shadow: 0 0 0 1px var(--line) inset; user-select: none;
+}
+.w.veil:active { background: var(--line); }
+
+/* Hörjagd */
+.hunt { display: grid; justify-items: center; gap: 8px; }
+.hunt-btn {
+  width: 100%; min-height: 120px; border-radius: 14px; border: 0; cursor: pointer;
+  background: var(--plaque); color: #fff; font: 600 clamp(30px, 9vw, 42px)/1.1 var(--serif);
+  box-shadow: 0 6px 18px -8px rgba(30,55,101,.55); touch-action: manipulation;
+}
+.hunt-btn[disabled] { opacity: .5; }
+.hunt-btn.pulse { animation: pulse .18s ease-out; }
+@keyframes pulse { from { transform: scale(.96); } to { transform: none; } }
+.hunt-count { font: 700 22px var(--serif); color: var(--ink); }

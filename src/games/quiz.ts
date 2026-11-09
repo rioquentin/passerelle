@@ -1,11 +1,11 @@
-import { h, runRounds, plaque, choices, entryBox, speakBtn } from '../lib/ui.ts';
+import { h, runRounds, plaque, choices, entryBox, speakBtn, screen } from '../lib/ui.ts';
 import { say } from '../lib/speech.ts';
 import { CORE, CHUNKS, type Entry } from '../lib/lexicon.ts';
 import { answer, pick, shuffle, markPlayed } from '../lib/store.ts';
 import { FALSE_FRIENDS, type FF } from '../data/falsefriends.ts';
 import { RULES, type Rule } from '../data/rules.ts';
 import { PAIRS } from '../data/pairs.ts';
-import { SIGNALS, ZEIT_OPTIONS, NEG_OPTIONS, type SignalItem } from '../data/signals.ts';
+import { SIGNALS, SETS, ZEIT_OPTIONS, NEG_OPTIONS, type SignalItem } from '../data/signals.ts';
 
 const KERN_POOL: Entry[] = [...CORE, ...CHUNKS].sort((a, b) => a.rank - b.rank);
 
@@ -181,28 +181,75 @@ export function klang() {
   });
 }
 
-// ---------- 5. Wann? Ja oder nein? ----------
-export function signale() {
-  const items = shuffle(SIGNALS.map((s) => ({ ...s, id: 'signal:' + s.fr }))).slice(0, 12);
+// ---------- 5. Signale (12 Serien) ----------
+type SItem = SignalItem & { id: string };
+
+function signalRounds(n: number | null): SItem[] {
+  const all: SItem[] = SIGNALS.map((s) => ({ ...s, id: 'signal:' + s.fr }));
+  if (n === null) return shuffle(all.filter((s) => s.sig > 0)).slice(0, 12);
+  const own = shuffle(all.filter((s) => s.sig === n)).slice(0, 8);
+  const kind = own[0]?.kind;
+  if (kind === 'frei') return own;
+  // Zeit / Verneinung: mit Kontrastsätzen auffüllen (Gegenwart zuerst)
+  const others = shuffle(all.filter((s) => s.kind === kind && s.sig !== n)).sort((a, b) => (a.sig === 0 ? 0 : 1) - (b.sig === 0 ? 0 : 1));
+  return shuffle([...own, ...others.slice(0, Math.max(3, 10 - own.length))]);
+}
+
+export function signale(arg?: string) {
+  const n = arg === 'mix' ? null : arg ? Number(arg) : NaN;
+  if (Number.isNaN(n)) return signalMenu();
+  const set = n === null ? undefined : SETS.find((s) => s.n === n);
+  if (n !== null && !set) return signalMenu();
   runRounds({
-    title: 'Wann? Ja oder nein?',
-    items,
-    again: signale,
-    intro: () => h('p', { class: 'prompt' }, 'Keine Grammatikregeln – nur die Signale, an denen man erkennt, was gemeint ist.',
-      h('small', {}, 'Ist es vorbei, jetzt oder später? Stimmt es, oder nicht?')),
-    render(s: SignalItem & { id: string }, stage, done) {
-      const opts = s.kind === 'zeit' ? ZEIT_OPTIONS : NEG_OPTIONS;
+    title: set ? set.title : 'Signale gemischt',
+    items: signalRounds(n),
+    again: () => signale(arg),
+    intro: () => h('p', { class: 'prompt' }, set ? set.sub : 'Alle zwölf Signale durcheinander.',
+      h('small', {}, 'Keine Regeln auswendig lernen: Achte nur auf das Signal und entscheide, was gemeint ist.')),
+    render(s: SItem, stage, done) {
+      const st = SETS.find((x) => x.n === s.sig);
+      let opts: { label: string; hint?: string }[];
+      let idx: number;
+      let ask: string;
+      if (s.kind === 'frei') {
+        const labels = s.opts ? shuffle(s.opts)
+          : st?.opts ? st.opts
+          : shuffle([s.answer, ...shuffle((st?.pool ?? []).filter((o) => o !== s.answer)).slice(0, 2)]);
+        opts = labels.map((label) => ({ label }));
+        idx = labels.indexOf(s.answer);
+        ask = s.ask ?? st?.ask ?? '';
+      } else {
+        const base = s.kind === 'zeit' ? ZEIT_OPTIONS : NEG_OPTIONS;
+        opts = base;
+        idx = base.findIndex((o) => o.id === s.answer);
+        ask = s.kind === 'zeit' ? 'Wann passiert das?' : 'Stimmt es – oder nicht?';
+      }
       stage.append(
-        h('p', { class: 'note' }, s.kind === 'zeit' ? 'Wann passiert das?' : 'Stimmt es – oder nicht?'),
+        h('p', { class: 'note' }, ask),
         h('p', { class: 'text', lang: 'fr' }, s.fr),
         speakBtn(s.fr));
       say(s.fr);
-      const idx = opts.findIndex((o) => o.id === s.answer);
-      choices(stage, opts.map((o) => ({ label: o.label, hint: o.hint })), idx, (ok) => {
+      choices(stage, opts, idx, (ok) => {
         answer(s.id, ok);
         stage.append(h('div', { class: 'entry' + (ok ? '' : ' no') }, s.why));
         done(ok, `${s.fr} → ${opts[idx].label}`);
       });
     },
   });
+}
+
+function signalMenu() {
+  const list = h('ul', { class: 'games' },
+    ...SETS.map((s) => h('li', {}, h('a', { href: `#/signale/${s.n}` },
+      h('span', { class: 'n' }, String(s.n)),
+      h('span', { class: 't' }, s.title),
+      h('span', { class: 'm' }, '→'),
+      h('span', { class: 'd' }, s.sub)))),
+    h('li', {}, h('a', { href: '#/signale/mix' },
+      h('span', { class: 'n' }, '✱'), h('span', { class: 't' }, 'Alles gemischt'), h('span', { class: 'm' }, '→'),
+      h('span', { class: 'd' }, 'Zwölf Sätze aus allen Signalen'))));
+  screen('Signale',
+    h('p', { class: 'prompt' }, 'Zwölf kleine Signale verraten, was ein Satz bedeutet: vorbei oder später, ja oder nein, wer tut was.',
+      h('small', {}, 'Jede Serie dauert etwa zwei Minuten.')),
+    list);
 }

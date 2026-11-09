@@ -75,8 +75,9 @@ export interface Resolved { de: string; entry?: Entry; transparent: boolean; nam
 export function resolve(word: string, gloss: Record<string, string> = {}): Resolved | undefined {
   const w = norm(word);
   const g = gloss[w];
-  if (g) return { de: g.replace(/^=/, ''), transparent: g.startsWith('='), name: false };
   const e = lookup(w);
+  // Glosse = Bedeutung im Kontext; der Lexikoneintrag zählt trotzdem für Fortschritt und Abdeckung
+  if (g) return { de: g.replace(/^=/, ''), entry: e, transparent: g.startsWith('=') || (!!e && 'deb'.includes(e.kind)), name: false };
   if (e) return { de: e.de, entry: e, transparent: e.kind === 'd' || e.kind === 'e' || e.kind === 'b', name: false };
   const n = nameGloss(w);
   if (n) return { de: n.replace(/^=/, ''), transparent: n.startsWith('='), name: !n.startsWith('=') };
